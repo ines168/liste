@@ -31,7 +31,7 @@ public class Euri {
         //Rješenje jedan s brojačem
         for(int i = 0; i < novcanice.size(); i++) {
             int brojac = 0;
-            while (iznos > novcanice.get(i)) {
+            while (iznos >= novcanice.get(i)) {
                 iznos -= novcanice.get(i);
                 brojac++;
             }
@@ -42,8 +42,9 @@ public class Euri {
         }
         for(int i = 0; i < kovanice.size(); i++) {
             int brojac = 0;
-            while (iznos > kovanice.get(i)) {
+            while (iznos >= kovanice.get(i)) {
                 iznos -= kovanice.get(i);
+                iznos = Math.round(iznos*100.0)/100.0;
                 brojac++;
             }
             if (brojac != 0) {
@@ -66,6 +67,7 @@ public class Euri {
 //                System.out.println(kolicina + " * " + v);
 //            }
 //            iznos -= kolicina * v;
+//            iznos = Math.round(iznos*100.0) / 100.0;
 //        }
 
         sc.close();
